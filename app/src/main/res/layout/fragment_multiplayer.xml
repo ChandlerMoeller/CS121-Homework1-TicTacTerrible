@@ -1,0 +1,262 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.cs121.tictacterrible.SingleplayerFragment"
+    tools:showIn="@layout/app_bar_main">
+
+    <!-- On top, a TextView that can either be hidden, or contain "X won!", "O won!", or "Tie." -->
+    <TextView
+        android:id="@+id/multitextviewmessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center_horizontal"
+        android:text="" />
+
+
+    <!-- In the middle, a 3x3 grid of buttons.  -->
+    <GridLayout
+        android:id="@+id/multigridlayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|center"
+        android:columnCount="5"
+        android:rowCount="5">
+
+        <!-- Row 0 -->
+        <ImageButton
+            android:id="@+id/imageButton00"
+            android:tag="00"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/button_size"
+            android:scaleType="fitCenter"
+            android:onClick="clickBoard"
+            android:background="@color/defaultbackground"
+            />
+
+        <ImageButton
+            android:id="@+id/imageButton01"
+            android:tag="01"
+            android:layout_row="0"
+            android:layout_column="2"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/button_size"
+            android:scaleType="fitCenter"
+            android:onClick="clickBoard"
+            android:background="@color/defaultbackground"
+            />
+
+        <ImageButton
+            android:id="@+id/imageButton02"
+            android:tag="02"
+            android:layout_row="0"
+            android:layout_column="4"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/button_size"
+            android:scaleType="fitCenter"
+            android:onClick="clickBoard"
+            android:background="@color/defaultbackground"
+            />
+
+
+        <!-- Row 1 -->
+        <ImageButton
+            android:id="@+id/imageButton10"
+            android:tag="10"
+            android:layout_row="2"
+            android:layout_column="0"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/button_size"
+            android:scaleType="fitCenter"
+            android:onClick="clickBoard"
+            android:background="@color/defaultbackground"
+            />
+
+        <ImageButton
+            android:id="@+id/imageButton11"
+            android:tag="11"
+            android:layout_row="2"
+            android:layout_column="2"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/button_size"
+            android:scaleType="fitCenter"
+            android:onClick="clickBoard"
+            android:background="@color/defaultbackground"
+            />
+
+        <ImageButton
+            android:id="@+id/imageButton12"
+            android:tag="12"
+            android:layout_row="2"
+            android:layout_column="4"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/button_size"
+            android:scaleType="fitCenter"
+            android:onClick="clickBoard"
+            android:background="@color/defaultbackground"
+            />
+
+        <!-- Row 2 -->
+        <ImageButton
+            android:id="@+id/imageButton20"
+            android:tag="20"
+            android:layout_row="4"
+            android:layout_column="0"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/button_size"
+            android:scaleType="fitCenter"
+            android:onClick="clickBoard"
+            android:background="@color/defaultbackground"
+            />
+
+        <ImageButton
+            android:id="@+id/imageButton21"
+            android:tag="21"
+            android:layout_row="4"
+            android:layout_column="2"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/button_size"
+            android:scaleType="fitCenter"
+            android:onClick="clickBoard"
+            android:background="@color/defaultbackground"
+            />
+
+        <ImageButton
+            android:id="@+id/imageButton22"
+            android:tag="22"
+            android:layout_row="4"
+            android:layout_column="4"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/button_size"
+            android:scaleType="fitCenter"
+            android:onClick="clickBoard"
+            android:background="@color/defaultbackground"
+            />
+
+
+
+        <!-- -->
+        <!-- Making the board -->
+        <!-- -->
+
+        <!-- row 0 -->
+        <View
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_width="@dimen/line_thickness"
+            android:layout_height="@dimen/button_size"
+            android:background="@color/boardcolor" />
+        <View
+            android:layout_row="0"
+            android:layout_column="3"
+            android:layout_width="@dimen/line_thickness"
+            android:layout_height="@dimen/button_size"
+            android:background="@color/boardcolor" />
+        <!-- row 1 -->
+        <View
+            android:layout_row="1"
+            android:layout_column="0"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/line_thickness"
+            android:background="@color/boardcolor" />
+        <View
+            android:layout_row="1"
+            android:layout_column="1"
+            android:layout_width="@dimen/line_thickness"
+            android:layout_height="@dimen/line_thickness"
+            android:background="@color/boardcolor" />
+        <View
+            android:layout_row="1"
+            android:layout_column="2"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/line_thickness"
+            android:background="@color/boardcolor" />
+        <View
+            android:layout_row="1"
+            android:layout_column="3"
+            android:layout_width="@dimen/line_thickness"
+            android:layout_height="@dimen/line_thickness"
+            android:background="@color/boardcolor" />
+        <View
+            android:layout_row="1"
+            android:layout_column="4"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/line_thickness"
+            android:background="@color/boardcolor" />
+        <!-- row 2 -->
+        <View
+            android:layout_row="2"
+            android:layout_column="1"
+            android:layout_width="@dimen/line_thickness"
+            android:layout_height="@dimen/button_size"
+            android:background="@color/boardcolor" />
+        <View
+            android:layout_row="2"
+            android:layout_column="3"
+            android:layout_width="@dimen/line_thickness"
+            android:layout_height="@dimen/button_size"
+            android:background="@color/boardcolor" />
+        <!-- row 3 -->
+        <View
+            android:layout_row="3"
+            android:layout_column="0"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/line_thickness"
+            android:background="@color/boardcolor" />
+        <View
+            android:layout_row="3"
+            android:layout_column="1"
+            android:layout_width="@dimen/line_thickness"
+            android:layout_height="@dimen/line_thickness"
+            android:background="@color/boardcolor" />
+        <View
+            android:layout_row="3"
+            android:layout_column="2"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/line_thickness"
+            android:background="@color/boardcolor" />
+        <View
+            android:layout_row="3"
+            android:layout_column="3"
+            android:layout_width="@dimen/line_thickness"
+            android:layout_height="@dimen/line_thickness"
+            android:background="@color/boardcolor" />
+        <View
+            android:layout_row="3"
+            android:layout_column="4"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/line_thickness"
+            android:background="@color/boardcolor" />
+        <!-- row 4 -->
+        <View
+            android:layout_row="4"
+            android:layout_column="1"
+            android:layout_width="@dimen/line_thickness"
+            android:layout_height="@dimen/button_size"
+            android:background="@color/boardcolor" />
+        <View
+            android:layout_row="4"
+            android:layout_column="3"
+            android:layout_width="@dimen/line_thickness"
+            android:layout_height="@dimen/button_size"
+            android:background="@color/boardcolor" />
+
+
+    </GridLayout>
+
+    <!-- Below the 3x3 grid, a button that says "New game".  -->
+    <Button
+        android:id="@+id/multibutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:text="New Game"
+        android:onClick="newgame"/>
+
+</FrameLayout>
